@@ -44,6 +44,7 @@ def get_rank():
 
 
 def draw_card():
+    """draws a random card accounting for the possibility of the two joker cards"""
     joker = random.randint(1, 54)
     if joker > 2:
         suit = get_suit()
@@ -53,6 +54,7 @@ def draw_card():
         return f"joker"
     
 def draw_hand(number):
+    """draws a certain number of cards with replacement in a hand dependent on the input"""
     hand =""
     for i in range(number):
         hand += (draw_card() + 1*"\n")
